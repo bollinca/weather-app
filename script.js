@@ -8,7 +8,7 @@ async function updateDisplays() {
   let jsonData = await fetchWeatherData().catch(err => console.log(err))
   console.log(jsonData);
 
-  let fahrenTemp = Math.round((jsonData.main.temp - 273.15) * (9/5) + 32);
+  let fahrenTemp = Math.round((jsonData.main.temp - 273.15) * (9 / 5) + 32);
   displays.temperature.textContent = `Current Temp: ${fahrenTemp}\u00B0F`
   displays.location.textContent = `City: ${jsonData.name}`;
 }
@@ -16,6 +16,11 @@ async function updateDisplays() {
 const displays = {
   location: document.querySelector('#location'),
   temperature: document.querySelector('#temperature'),
+}
+
+const search = {
+  field: document.querySelector('#search'),
+  submitButton: document.querySelector('#search-submit'),
 }
 
 updateDisplays();
