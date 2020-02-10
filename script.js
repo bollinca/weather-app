@@ -7,9 +7,10 @@ async function fetchWeatherData() {
 async function updateDisplays() {
   let jsonData = await fetchWeatherData().catch(err => console.log(err))
   console.log(jsonData);
-  displays.location.textContent = `City: ${jsonData.name}`;
+
   let fahrenTemp = Math.round((jsonData.main.temp - 273.15) * (9/5) + 32);
   displays.temperature.textContent = `Current Temp: ${fahrenTemp}\u00B0F`
+  displays.location.textContent = `City: ${jsonData.name}`;
 }
 
 const displays = {
