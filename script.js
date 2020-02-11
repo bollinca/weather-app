@@ -13,6 +13,23 @@ async function updateDisplays() {
   displays.location.textContent = `City: ${jsonData.name}`;
 }
 
+const buttonControl = {
+
+  formatInput: function () {
+    let currentValue = search.field.value;
+    let noCommaValue = currentValue.trim().replace(',', '');
+    let formattedValue = noCommaValue.replace(/\s/g, ',');
+    return formattedValue
+  },
+
+  bindButton: function () {
+    search.submitButton.addEventListener('click', () => {
+      let value = this.formatInput();
+      console.log(value);
+    })
+  }
+}
+
 const displays = {
   location: document.querySelector('#location'),
   temperature: document.querySelector('#temperature'),
@@ -23,4 +40,5 @@ const search = {
   submitButton: document.querySelector('#search-submit'),
 }
 
+buttonControl.bindButton();
 updateDisplays();
