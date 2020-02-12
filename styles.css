@@ -33,3 +33,13 @@ header {
   margin: 5px auto;
   padding: 5px;
 }
+
+button {
+  height: 35px;
+  background-color: whitesmoke;
+  border-color: black;
+}
+
+.input-container {
+  padding: 3px 0;
+}

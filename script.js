@@ -14,13 +14,14 @@ async function updateDisplays(location) {
 }
 
 const searchControl = {
-  field: document.querySelector('#search'),
+  cityField: document.querySelector('#search-city'),
+  countryField: document.querySelector('#search-country'),
   submitButton: document.querySelector('#search-submit'),
 
-  formatInput: function () { // BUG - cannot accept cities/countries with spaces in name
-    let location = this.field.value;
-    let noCommaLocation = location.trim().replace(',', '');
-    let formattedLocation = noCommaLocation.replace(/\s/g, ',');
+  formatInput: function () {
+    let city = this.cityField.value.trim();
+    let country = this.countryField.value.trim();
+    let formattedLocation = city + ',' + country;
     return formattedLocation
   },
 
