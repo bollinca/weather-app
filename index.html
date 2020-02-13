@@ -11,16 +11,20 @@
   </header>
   <div id="weather-block">
     <div class='input-container'>
-      <label for='search-city'>Input City:</label>
-      <input id='search-city' type='text' placeholder='City OR Zip Code'>
+      <div  class='block'>
+        <label for='search-city'>Input City:</label>
+        <input id='search-city' type='text' placeholder='City OR Zip Code'>
+      </div >
+      <div class='block'>
+        <label for='search-country'>Input Country (optional):</label>
+        <input id='search-country' type='text' placeholder='Country (optional)'>
+      </div>
+      <button id='search-submit'>Show My Weather</button>
     </div>
-    <div class='input-container'>
-      <label for='search-country'>Input Country (optional):</label>
-      <input id='search-country' type='text' placeholder='Country (optional)'>
-    </div>
-    <button id='search-submit'>Show My Weather</button>
     <p id="location"></p>
     <p id="temperature"></p>
+    <p id="feel"></p>
+    <p id="sky-status"></p>
   </div>
 </body>
 

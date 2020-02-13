@@ -10,7 +10,9 @@ async function updateDisplays(location) {
 
   let fahrenTemp = Math.round((jsonData.main.temp - 273.15) * (9 / 5) + 32);
   displays.temperature.textContent = `Current Temp: ${fahrenTemp}\u00B0F`
+  displays.feel.textContent = `Feels Like: ${Math.round((jsonData.main.feels_like - 273.15) * (9 / 5) + 32)}\u00B0F`
   displays.location.textContent = `City: ${jsonData.name}`;
+  displays.sky.textContent = `Sky Status: ${jsonData.weather[0].main}`;
 }
 
 const searchControl = {
@@ -36,6 +38,8 @@ const searchControl = {
 const displays = {
   location: document.querySelector('#location'),
   temperature: document.querySelector('#temperature'),
+  feel: document.querySelector('#feel'),
+  sky: document.querySelector('#sky-status')
 }
 
 searchControl.bindButton();
